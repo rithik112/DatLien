@@ -16,8 +16,6 @@ import { SubmitListingComponent } from './components/submit-listing/submit-listi
 
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `home-component`
-  //{ path: '**', component: Error404Component },  // Wildcard route for a 404 page
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -31,6 +29,8 @@ const routes: Routes = [
   { path: 'commingsoon', component: CommingSoonComponent },
   { path: 'faq', component: FaqComponent },
   { path: '404', component: Error404Component },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `home-component`
+  { path: '**', component: Error404Component },  // Wildcard route for a 404 page
 ];
 
 @NgModule({
