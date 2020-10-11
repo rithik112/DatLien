@@ -12,9 +12,22 @@ mongoose.connect(db, err => {
     }
 })
 
-
 router.get('/',  (req, res) => {
     res.send("Hey It's me Api...!")
+})
+
+router.post('/register', (req, res) => {
+    let userData = req.body
+    let user = new User(userData)
+    user.save((error, registeredUser) => {
+        if (error) {
+            console.log("Error While Registering User To Database...!\n" + error)
+        } else {
+            // let payload = { subject: registeredUser._id}
+            // let token =  jwt.sign(payload, '112SecretKey')
+            res.status(200).send(registeredUser)
+        }
+    })
 })
 
 module.exports = router
