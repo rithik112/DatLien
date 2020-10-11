@@ -30,4 +30,23 @@ router.post('/register', (req, res) => {
     })
 })
 
+router.post('/login', (req, res) => {
+    let userData = req.body
+    User.findOne({email: userData.email}, (error, user) => {
+        if (error) {
+            console.log( error)
+        } else {
+           if (!user) {
+               res.status(401).send("Invalid Email...!")
+           } else if (user.password !== userData.password){
+               res.status(401).send("Invalid Password...!")
+           } else {
+            //   let payload = { subject: user._id}
+            //   let token =  jwt.sign(payload, '112SecretKey') 
+              res.status(200).send(user)
+           }
+        }
+    })
+})
+
 module.exports = router
