@@ -16,6 +16,90 @@ router.get('/',  (req, res) => {
     res.send("Hey It's me Api...!")
 })
 
+router.get('/listings', (req,res) => {
+    let listings = [
+      {
+        "_id": "1",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "2",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "3",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "4",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "5",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "6",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      }
+    ]
+    res.json(listings)
+  })
+  
+  router.get('/special', (req, res) => {
+    let specialListings = [
+      {
+        "_id": "1",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "2",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "3",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "4",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "5",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "6",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      }
+    ]
+    res.json(specialListings)
+  })
+
 router.post('/register', (req, res) => {
     let userData = req.body
     let user = new User(userData)
