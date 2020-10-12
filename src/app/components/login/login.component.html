@@ -11,16 +11,16 @@
   
         <div class="form-group">
             <label>Email</label>
-            <input type="text" class="form-control form-control-light" placeholder="Email" name="email" value="">
+            <input type="text" [(ngModel)]="loginUserData.email" class="form-control form-control-light" placeholder="Email" name="email" value="">
           </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="password" class="form-control form-control-light" placeholder="Password" name="password" value="">
+          <input type="password" [(ngModel)]="loginUserData.password" class="form-control form-control-light" placeholder="Password" name="password" value="">
         </div>
         <div class="form-group">
           <a href="#" class="forgot-password">Forgot Password?</a>
         </div>
-        <button class="btn-custom secondary btn-block">Login</button>
+        <button (click)="loginUser()" class="btn-custom secondary btn-block">Login</button>
         <div class="auth-seperator">
           <span>OR</span>
         </div>
