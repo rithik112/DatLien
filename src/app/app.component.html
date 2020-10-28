@@ -23,9 +23,10 @@
         </ul>
 
         <ul class="top-header-nav">
-          <li> <a routerLink='/login' routerLinkActive="active"> Login</a> </li>
-          <li>or</li>
-          <li> <a routerLink='/register' routerLinkActive="active"> Signup</a> </li>
+          <li> <a routerLink='/login' *ngIf="!_authService.loggedIn()" routerLinkActive="active"> Login</a> </li>
+          <li> <a *ngIf="!_authService.loggedIn()"> or</a> </li>
+          <li> <a routerLink='/register' *ngIf="!_authService.loggedIn()" routerLinkActive="active"> Signup</a> </li>
+          <li> <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" routerLinkActive="active"> Logout</a> </li>
         </ul>
       </div>
     </div>
