@@ -9,6 +9,6 @@ import { AuthService } from './Services/auth.service';
 export class AppComponent {
   title = 'DatLien';
 
-  constructor(private _authService: AuthService){}
+  constructor(public _authService: AuthService){}
 
 }
