@@ -58,8 +58,8 @@ router.get('/listings', (req,res) => {
     res.json(listings)
   })
   
-  router.get('/special', (req, res) => {
-    let specialListings = [
+  router.get('/royal', (req, res) => {
+    let royalListings = [
       {
         "_id": "1",
         "name": "Auto Expo Special",
