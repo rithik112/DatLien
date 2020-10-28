@@ -97,7 +97,7 @@ router.get('/listings', (req,res) => {
         "date": "2012-04-23T18:25:43.511Z"
       }
     ]
-    res.json(specialListings)
+    res.json(royalListings)
   })
 
 router.post('/register', (req, res) => {
