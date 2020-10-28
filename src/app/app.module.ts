@@ -20,6 +20,7 @@ import { ListingDetailsComponent } from './components/listing-details/listing-de
 import { FaqComponent } from './components/faq/faq.component';
 import { AuthService } from './Services/auth.service';
 import { ListingService } from './Services/listing.service';
+import { RoyalComponent } from './components/royal/royal.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ListingService } from './Services/listing.service';
     ProfileSavedListingsComponent,
     ListingDetailsComponent,
     FaqComponent,
+    RoyalComponent,
   ],
   imports: [
     BrowserModule,
