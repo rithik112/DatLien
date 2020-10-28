@@ -21,6 +21,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { AuthService } from './Services/auth.service';
 import { ListingService } from './Services/listing.service';
 import { RoyalComponent } from './components/royal/royal.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { RoyalComponent } from './components/royal/royal.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService, ListingService],
+  providers: [AuthService, ListingService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
