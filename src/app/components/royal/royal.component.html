@@ -1,1 +1,15 @@
-<p>royal works!</p>
+<br><br><br><br><br>
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let l of royalListings">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{l.name}}</h5>
+          <p class="card-text">{{l.description}}</p>
+          <a href="#" class="btn btn-success">Buy Tickets</a>
+        </div>
+        <div class="card-footer text-muted">
+          {{l.date | date:'shortDate'}}
+        </div>
+      </div>
+    </div>
+  </div>
