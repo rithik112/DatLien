@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
 import { CompareComponent } from './components/compare/compare.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'commingsoon', component: CommingSoonComponent },
   { path: 'faq', component: FaqComponent },
   { path: '404', component: Error404Component },
-  { path: 'royal', component: RoyalComponent },
+  { path: 'royal', component: RoyalComponent, canActivate: [AuthGuard], },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `home-component`
   { path: '**', component: Error404Component },  // Wildcard route for a 404 page
 ];
