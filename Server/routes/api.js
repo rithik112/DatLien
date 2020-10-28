@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const jwt = require('jsonwebtoken')
 const User = require('../models/user')
 const mongoose = require('mongoose')
 const db = "mongodb+srv://Auth1:Auth1@cluster0.4a0ry.mongodb.net/Auth1?retryWrites=true&w=majority"
@@ -107,9 +108,9 @@ router.post('/register', (req, res) => {
         if (error) {
             console.log("Error While Registering User To Database...!\n" + error)
         } else {
-            // let payload = { subject: registeredUser._id}
-            // let token =  jwt.sign(payload, '112SecretKey')
-            res.status(200).send(registeredUser)
+            let payload = { subject: registeredUser._id}
+            let token =  jwt.sign(payload, '112SecretKey')
+            res.status(200).send({token})
         }
     })
 })
@@ -125,9 +126,9 @@ router.post('/login', (req, res) => {
            } else if (user.password !== userData.password){
                res.status(401).send("Invalid Password...!")
            } else {
-            //   let payload = { subject: user._id}
-            //   let token =  jwt.sign(payload, '112SecretKey') 
-              res.status(200).send(user)
+              let payload = { subject: user._id}
+              let token =  jwt.sign(payload, '112SecretKey') 
+              res.status(200).send({token})
            }
         }
     })
