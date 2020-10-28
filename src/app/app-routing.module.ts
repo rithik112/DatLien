@@ -12,6 +12,7 @@ import { ProfileListingsComponent } from './components/profile-listings/profile-
 import { ProfileSavedListingsComponent } from './components/profile-saved-listings/profile-saved-listings.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RoyalComponent } from './components/royal/royal.component';
 import { SubmitListingComponent } from './components/submit-listing/submit-listing.component';
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'commingsoon', component: CommingSoonComponent },
   { path: 'faq', component: FaqComponent },
   { path: '404', component: Error404Component },
+  { path: 'royal', component: RoyalComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `home-component`
   { path: '**', component: Error404Component },  // Wildcard route for a 404 page
 ];
