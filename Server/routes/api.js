@@ -17,6 +17,22 @@ router.get('/',  (req, res) => {
     res.send("Hey It's me Api...!")
 })
 
+function verifyToken(req, res, next) {
+  if(!req.headers.authorization) {
+    return res.status(401).send('Unauthorized request')
+  }
+  let token = req.headers.authorization.split(' ')[1]
+  if(token === 'null') {
+    return res.status(401).send('Unauthorized request')    
+  }
+  let payload = jwt.verify(token, '112SecretKey')
+  if(!payload) {
+    return res.status(401).send('Unauthorized request')    
+  }
+  req.userId = payload.subject
+  next()
+}
+
 router.get('/listings', (req,res) => {
     let listings = [
       {
@@ -59,7 +75,7 @@ router.get('/listings', (req,res) => {
     res.json(listings)
   })
   
-  router.get('/royal', (req, res) => {
+  router.get('/royal', verifyToken, (req, res) => {
     let royalListings = [
       {
         "_id": "1",
