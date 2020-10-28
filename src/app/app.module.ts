@@ -19,6 +19,7 @@ import { ProfileSavedListingsComponent } from './components/profile-saved-listin
 import { ListingDetailsComponent } from './components/listing-details/listing-details.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { AuthService } from './Services/auth.service';
+import { ListingService } from './Services/listing.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { AuthService } from './Services/auth.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, ListingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
