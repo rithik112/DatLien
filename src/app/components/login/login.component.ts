@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {
         localStorage.setItem('token', res.token)
-        this._router.navigate(['/submitlisting'])
+        this._router.navigate(['/royal'])
       },
       err => console.log(err)
     )
