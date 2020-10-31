@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const db = "mongodb+srv://Auth1:Auth1@cluster0.4a0ry.mongodb.net/Auth1?retryWrites=true&w=majority"
 const bcrypt = require('bcrypt');
 
-mongoose.connect(db, err => {
+mongoose.connect(db, {useNewUrlParser: true , useUnifiedTopology: true}, err => {
     if (err) {
         console.error("Error While Connecting To Database...!\n" + err)
     } else {
